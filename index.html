@@ -1,0 +1,694 @@
+<!DOCTYPE html>
+<html class="scroll-smooth" lang="en">
+<head>
+    <meta charset="utf-8"/>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+    <title>Bandung Explore | Paket Tour Bandung Murah & Terpercaya</title>
+    <meta name="description" content="Jelajahi keindahan Bandung bersama Bandung Explore. Paket tour terlengkap, driver berpengalaman, dan layanan profesional untuk liburan tak terlupakan.">
+    <link rel="icon" type="image/png" href="assets/images/logo.png">
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com" rel="preconnect"/>
+    <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&family=Bebas+Neue&display=swap" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"/>
+    
+    <!-- Tailwind CSS CDN (Using user's choice) -->
+    <script src="https://cdn.tailwindcss.com?plugins=forms,typography"></script>
+    <script>
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              primary: "#3498db",
+              secondary: "#2ecc71",
+              "background-light": "#ffffff",
+              "background-dark": "#0f172a",
+            },
+            fontFamily: {
+              display: ["Outfit", "sans-serif"],
+              heading: ["Bebas Neue", "cursive"],
+            },
+            borderRadius: {
+              DEFAULT: "1rem",
+              "xl": "2rem",
+              "2xl": "3rem",
+            },
+            animation: {
+              'float': 'float 6s ease-in-out infinite',
+            },
+            keyframes: {
+              float: {
+                '0%, 100%': { transform: 'translateY(0)' },
+                '50%': { transform: 'translateY(-20px)' },
+              }
+            }
+          },
+        },
+      };
+    </script>
+    <style>
+        .bebas { font-family: 'Bebas Neue', cursive; }
+        .outfit { font-family: 'Outfit', sans-serif; }
+        
+        /* Custom scrollbar */
+        ::-webkit-scrollbar {
+            width: 10px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #f1f1f1;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #3498db;
+            border-radius: 5px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #2980b9;
+        }
+
+        /* Glassmorphism utility */
+        .glass {
+            background: rgba(255, 255, 255, 0.7);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+        .dark .glass {
+            background: rgba(15, 23, 42, 0.7);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        /* Scroll Animations */
+        .reveal {
+            opacity: 0;
+            transition: all 1.2s cubic-bezier(0.16, 1, 0.3, 1);
+            filter: blur(5px);
+        }
+
+        .reveal-up { transform: translateY(40px); }
+        .reveal-down { transform: translateY(-40px); }
+        .reveal-left { transform: translateX(40px); }
+        .reveal-right { transform: translateX(-40px); }
+
+        .active.reveal {
+            opacity: 1;
+            transform: translate(0, 0);
+            filter: blur(0);
+        }
+
+        /* Stagger delays */
+        .reveal[style*="--delay"] {
+            transition-delay: var(--delay);
+        }
+
+        /* Legacy fade-in for backwards compatibility */
+        .fade-in {
+            animation: fadeIn 1s ease-out forwards;
+            opacity: 0;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+    </style>
+</head>
+<body class="bg-background-light dark:bg-background-dark text-slate-900 dark:text-slate-100 outfit transition-colors duration-300">
+
+<!-- Navigation -->
+<nav class="fixed top-0 w-full z-50 glass border-b border-slate-100/50 dark:border-slate-800/50">
+    <div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
+        <div class="flex items-center gap-4 group cursor-pointer">
+            <img src="assets/images/logo.png" alt="Bandung Explore Logo" class="w-10 h-10 object-contain group-hover:scale-110 transition-transform">
+            <span class="bebas text-2xl tracking-wider">Bandung Explore</span>
+        </div>
+        <div class="hidden md:flex items-center gap-10">
+            <a class="text-sm font-semibold hover:text-primary transition-colors relative after:content-[''] after:absolute after:bottom-[-4px] after:left-0 after:w-0 after:h-[2px] after:bg-primary hover:after:w-full after:transition-all" href="#tours">Paket Tour</a>
+            <a class="text-sm font-semibold hover:text-primary transition-colors relative after:content-[''] after:absolute after:bottom-[-4px] after:left-0 after:w-0 after:h-[2px] after:bg-primary hover:after:w-full after:transition-all" href="#why-us">Keunggulan</a>
+            <a class="text-sm font-semibold hover:text-primary transition-colors relative after:content-[''] after:absolute after:bottom-[-4px] after:left-0 after:w-0 after:h-[2px] after:bg-primary hover:after:w-full after:transition-all" href="#details">Itinerary</a>
+            <a class="text-sm font-semibold hover:text-primary transition-colors relative after:content-[''] after:absolute after:bottom-[-4px] after:left-0 after:w-0 after:h-[2px] after:bg-primary hover:after:w-full after:transition-all" href="#destinations">Galeri</a>
+        </div>
+        <div class="flex items-center gap-4">
+            <button id="theme-toggle" class="p-2 rounded-full hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors">
+                <span class="material-icons text-xl dark:hidden">dark_mode</span>
+                <span class="material-icons text-xl hidden dark:block">light_mode</span>
+            </button>
+            <button id="mobile-menu-btn" class="md:hidden p-2 rounded-full hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors">
+                <span class="material-icons text-xl">menu</span>
+            </button>
+            <a href="https://wa.me/yournumber" class="hidden md:block bg-slate-900 dark:bg-primary text-white px-6 py-2.5 rounded-full text-sm font-bold hover:scale-105 active:scale-95 transition-all shadow-lg hover:shadow-primary/20">
+                Hubungi Kami
+            </a>
+        </div>
+    </div>
+    <!-- Mobile Menu -->
+    <div id="mobile-menu" class="hidden md:hidden absolute top-20 left-0 w-full glass border-t border-slate-100/50 dark:border-slate-800/50 animate-fadeIn">
+        <div class="flex flex-col p-6 gap-6">
+            <a class="text-lg font-semibold hover:text-primary transition-colors" href="#tours">Paket Tour</a>
+            <a class="text-lg font-semibold hover:text-primary transition-colors" href="#why-us">Keunggulan</a>
+            <a class="text-lg font-semibold hover:text-primary transition-colors" href="#details">Itinerary</a>
+            <a class="text-lg font-semibold hover:text-primary transition-colors" href="#destinations">Galeri</a>
+            <a href="https://wa.me/yournumber" class="bg-slate-900 dark:bg-primary text-white px-6 py-4 rounded-xl text-lg font-bold text-center hover:opacity-90 transition-all">
+                Hubungi Kami
+            </a>
+        </div>
+    </div>
+</nav>
+
+<!-- Hero Header -->
+<header class="pt-32 pb-16 px-6 max-w-7xl mx-auto fade-in">
+    <div class="grid grid-cols-12 gap-6">
+        <div class="col-span-12 lg:col-span-9 relative group reveal reveal-right" style="--delay: 0.1s">
+            <div class="h-[550px] w-full rounded-2xl overflow-hidden relative shadow-2xl bg-slate-200 dark:bg-slate-800">
+                <img alt="Bandung Landscape" class="w-full h-full object-cover transform scale-100 group-hover:scale-110 transition-transform duration-1000" src="assets/images/hero-bandung-landscape.jpeg"/>
+                <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-transparent group-hover:via-black/20 transition-colors"></div>
+                <div class="absolute inset-0 p-8 md:p-16 flex flex-col justify-end">
+                    <h1 class="bebas text-white text-6xl md:text-8xl leading-[0.9] tracking-tight mb-6 reveal reveal-up" style="--delay: 0.5s">
+                        Jelajahi Bandung <br/> Tanpa Ribet – Paket <br/> <span class="text-primary drop-shadow-[0_0_15px_rgba(52,152,219,0.5)]">Tour Terpercaya</span>
+                    </h1>
+                    
+                    <div class="flex flex-wrap gap-4 reveal reveal-up" style="--delay: 0.7s">
+                        <a href="#tours" class="bg-primary text-white px-8 py-4 rounded-full font-bold hover:scale-105 transition-all shadow-lg hover:shadow-primary/30 flex items-center gap-2">
+                            Pilih Paket Tour <span class="material-icons">arrow_downward</span>
+                        </a>
+                        <a href="https://wa.me/yournumber" class="glass text-white px-8 py-4 rounded-full font-bold hover:bg-white/20 transition-all flex items-center gap-2">
+                            <span class="material-icons">chat</span> Chat WhatsApp
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-span-12 lg:col-span-3 flex flex-col gap-6">
+            <div class="bg-slate-900 dark:bg-slate-800 rounded-2xl p-8 flex-1 text-white relative overflow-hidden group shadow-xl reveal reveal-left" style="--delay: 0.2s">
+                <div class="absolute top-0 right-0 p-4 opacity-10 group-hover:opacity-20 transition-opacity">
+                    <span class="material-icons text-8xl">explore</span>
+                </div>
+                <span class="material-icons text-primary mb-6 text-4xl">verified_user</span>
+                <p class="text-lg leading-relaxed mb-6 opacity-90 relative z-10">Liburan nyaman untuk keluarga, kantor, dan private trip.
+Pilih paketnya, kami urus semuanya.</p>
+                <div class="flex items-center gap-2 text-primary font-bold">
+                    <span class="material-icons text-sm">check_circle</span> 100% Aman
+                </div>
+            </div>
+            <div class="h-44 rounded-2xl overflow-hidden relative shadow-lg group reveal reveal-left bg-slate-200 dark:bg-slate-800" style="--delay: 0.3s">
+                <img alt="Aktivitas Wisata" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" src="assets/images/hero-side-activity.jpg"/>
+                <div class="absolute inset-0 bg-black/20 group-hover:bg-transparent transition-colors"></div>
+            </div>
+        </div>
+    </div>
+</header>
+
+<!-- Tour Packages Section -->
+<section id="tours" class="py-24 px-6 bg-slate-50 dark:bg-slate-900/50">
+    <div class="max-w-7xl mx-auto">
+        <div class="text-center mb-16 reveal reveal-up">
+            <span class="text-primary font-bold tracking-[0.3em] uppercase text-xs mb-4 block">Best Offers</span>
+            <h2 class="bebas text-5xl md:text-7xl">Pilihan Paket Tour</h2>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+            <!-- Paket 1 -->
+            <div class="bg-white dark:bg-slate-800 rounded-3xl overflow-hidden shadow-xl hover:shadow-2xl transition-all group reveal reveal-up" style="--delay: 0.1s">
+                <div class="h-56 relative overflow-hidden bg-slate-100 dark:bg-slate-700">
+                    <img src="assets/images/paket-one-day-trip.jpeg" alt="Bandung Day Trip" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700">
+                    <div class="absolute top-4 left-4 bg-primary text-white text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wider">Most Popular</div>
+                </div>
+                <div class="p-8">
+                    <div class="flex items-center gap-2 text-slate-500 dark:text-slate-400 text-xs mb-3 uppercase tracking-widest font-bold">
+                        <span class="material-icons text-sm text-primary">schedule</span> 1 Day Trip
+                    </div>
+                    <h3 class="bebas text-3xl mb-4 group-hover:text-primary transition-colors">Bandung One Day Trip</h3>
+                    <ul class="space-y-2 mb-8">
+                        <li class="text-sm text-slate-600 dark:text-slate-400 flex items-center gap-2">
+                            <span class="material-icons text-xs text-primary">location_on</span> Kawah Putih
+                        </li>
+                        <li class="text-sm text-slate-600 dark:text-slate-400 flex items-center gap-2">
+                            <span class="material-icons text-xs text-primary">location_on</span> Orchid Forest
+                        </li>
+                        <li class="text-sm text-slate-600 dark:text-slate-400 flex items-center gap-2">
+                            <span class="material-icons text-xs text-primary">location_on</span> Ciwidey
+                        </li>
+                    </ul>
+                    <div class="pt-6 border-t border-slate-100 dark:border-slate-700 flex flex-col gap-4">
+                        <div>
+                            <p class="text-xs text-slate-400 uppercase font-bold tracking-widest">Harga mulai dari</p>
+                            <p class="text-2xl font-bold text-slate-900 dark:text-white">Rp 350rb <span class="text-sm font-normal text-slate-500">/pax</span></p>
+                        </div>
+                        <button class="w-full bg-slate-900 dark:bg-primary text-white py-4 rounded-2xl font-bold hover:opacity-90 transition-all flex items-center justify-center gap-2 group/btn">
+                            Detail & Booking <span class="material-icons text-sm transform group-hover/btn:translate-x-1 transition-transform">arrow_forward</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Paket 2 -->
+            <div class="bg-white dark:bg-slate-800 rounded-3xl overflow-hidden shadow-xl hover:shadow-2xl transition-all group reveal reveal-up" style="--delay: 0.2s">
+                <div class="h-56 relative overflow-hidden bg-slate-100 dark:bg-slate-700">
+                    <img src="assets/images/paket-2d1n-lembang.jpeg" alt="Bandung 2D1N" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700">
+                </div>
+                <div class="p-8">
+                    <div class="flex items-center gap-2 text-slate-500 dark:text-slate-400 text-xs mb-3 uppercase tracking-widest font-bold">
+                        <span class="material-icons text-sm text-primary">hotel</span> 2D 1N
+                    </div>
+                    <h3 class="bebas text-3xl mb-4 group-hover:text-primary transition-colors">Bandung 2D1N</h3>
+                    <ul class="space-y-2 mb-8">
+                        <li class="text-sm text-slate-600 dark:text-slate-400 flex items-center gap-2">
+                            <span class="material-icons text-xs text-primary">location_on</span> Floating Market
+                        </li>
+                        <li class="text-sm text-slate-600 dark:text-slate-400 flex items-center gap-2">
+                            <span class="material-icons text-xs text-primary">location_on</span> Tangkuban Perahu
+                        </li>
+                        <li class="text-sm text-slate-600 dark:text-slate-400 flex items-center gap-2">
+                            <span class="material-icons text-xs text-primary">location_on</span> Asia Africa
+                        </li>
+                    </ul>
+                    <div class="pt-6 border-t border-slate-100 dark:border-slate-700 flex flex-col gap-4">
+                        <div>
+                            <p class="text-xs text-slate-400 uppercase font-bold tracking-widest">Harga mulai dari</p>
+                            <p class="text-2xl font-bold text-slate-900 dark:text-white">Rp 850rb <span class="text-sm font-normal text-slate-500">/pax</span></p>
+                        </div>
+                        <button class="w-full bg-slate-900 dark:bg-primary text-white py-4 rounded-2xl font-bold hover:opacity-90 transition-all flex items-center justify-center gap-2 group/btn">
+                            Detail & Booking <span class="material-icons text-sm transform group-hover/btn:translate-x-1 transition-transform">arrow_forward</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Paket 3 -->
+            <div class="bg-white dark:bg-slate-800 rounded-3xl overflow-hidden shadow-xl hover:shadow-2xl transition-all group reveal reveal-up" style="--delay: 0.3s">
+                <div class="h-56 relative overflow-hidden bg-slate-100 dark:bg-slate-700">
+                    <img src="assets/images/paket-3d2n-lengkap.jpeg" alt="Bandung 3D2N" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700">
+                </div>
+                <div class="p-8">
+                    <div class="flex items-center gap-2 text-slate-500 dark:text-slate-400 text-xs mb-3 uppercase tracking-widest font-bold">
+                        <span class="material-icons text-sm text-primary">luggage</span> 3D 2N
+                    </div>
+                    <h3 class="bebas text-3xl mb-4 group-hover:text-primary transition-colors">Bandung 3D2N</h3>
+                    <ul class="space-y-2 mb-8">
+                        <li class="text-sm text-slate-600 dark:text-slate-400 flex items-center gap-2">
+                            <span class="material-icons text-xs text-primary">location_on</span> Dusun Bambu
+                        </li>
+                        <li class="text-sm text-slate-600 dark:text-slate-400 flex items-center gap-2">
+                            <span class="material-icons text-xs text-primary">location_on</span> Farmhouse
+                        </li>
+                        <li class="text-sm text-slate-600 dark:text-slate-400 flex items-center gap-2">
+                            <span class="material-icons text-xs text-primary">location_on</span> Tea Plantation
+                        </li>
+                    </ul>
+                    <div class="pt-6 border-t border-slate-100 dark:border-slate-700 flex flex-col gap-4">
+                        <div>
+                            <p class="text-xs text-slate-400 uppercase font-bold tracking-widest">Harga mulai dari</p>
+                            <p class="text-2xl font-bold text-slate-900 dark:text-white">Rp 1.5jt <span class="text-sm font-normal text-slate-500">/pax</span></p>
+                        </div>
+                        <button class="w-full bg-slate-900 dark:bg-primary text-white py-4 rounded-2xl font-bold hover:opacity-90 transition-all flex items-center justify-center gap-2 group/btn">
+                            Detail & Booking <span class="material-icons text-sm transform group-hover/btn:translate-x-1 transition-transform">arrow_forward</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Paket 4 -->
+            <div class="bg-primary p-8 rounded-3xl overflow-hidden shadow-xl hover:shadow-2xl transition-all group flex flex-col justify-between text-white reveal reveal-up" style="--delay: 0.4s">
+                <div>
+                    <div class="w-16 h-16 bg-white/20 rounded-2xl flex items-center justify-center mb-8">
+                        <span class="material-icons text-4xl">edit_note</span>
+                    </div>
+                    <h3 class="bebas text-4xl mb-4">Custom Trip (Request)</h3>
+                    <p class="opacity-90 mb-8">Punya destinasi impian sendiri atau butuh itinerari khusus? Kami siap mengatur rute perjalanan sesuai keinginanmu.</p>
+                    <ul class="space-y-4 mb-12">
+                        <li class="flex items-center gap-3"><span class="material-icons text-sm">check_circle</span> Rute Fleksibel</li>
+                        <li class="flex items-center gap-3"><span class="material-icons text-sm">check_circle</span> Pilihan Kendaraan</li>
+                        <li class="flex items-center gap-3"><span class="material-icons text-sm">check_circle</span> Budget Menyesuaikan</li>
+                    </ul>
+                </div>
+                <div>
+                    <p class="text-xs uppercase font-bold tracking-widest opacity-80 mb-4">Mulai Konsultasi</p>
+                    <button class="w-full bg-white text-primary py-4 rounded-2xl font-bold hover:bg-slate-100 transition-all flex items-center justify-center gap-2 group/btn">
+                        Hubungi Kami <span class="material-icons text-sm transform group-hover/btn:translate-x-1 transition-transform">chat</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Why Choose Us Section -->
+<section id="why-us" class="py-24 px-6 max-w-7xl mx-auto">
+    <div class="grid lg:grid-cols-2 gap-16 items-center">
+        <div class="reveal reveal-right">
+            <span class="text-primary font-bold tracking-[0.3em] uppercase text-xs mb-4 block">Our Excellence</span>
+            <h2 class="bebas text-5xl md:text-7xl mb-8">Kenapa Pilih Kami</h2>
+            <div class="space-y-6">
+                <div class="flex items-start gap-4 p-6 bg-slate-50 dark:bg-slate-800/50 rounded-2xl hover:shadow-xl transition-all group">
+                    <div class="w-12 h-12 bg-primary rounded-full flex items-center justify-center text-white shrink-0 group-hover:scale-110 transition-transform">
+                        <span class="material-icons">directions_car</span>
+                    </div>
+                    <div>
+                        <h3 class="font-bold text-xl mb-1">Armada nyaman & terawat</h3>
+                        <p class="text-slate-500 dark:text-slate-400 text-sm">Kendaraan terbaru, bersih, dan wangi untuk kenyamanan maksimal Anda.</p>
+                    </div>
+                </div>
+                <div class="flex items-start gap-4 p-6 bg-slate-50 dark:bg-slate-800/50 rounded-2xl hover:shadow-xl transition-all group">
+                    <div class="w-12 h-12 bg-primary rounded-full flex items-center justify-center text-white shrink-0 group-hover:scale-110 transition-transform">
+                        <span class="material-icons">person</span>
+                    </div>
+                    <div>
+                        <h3 class="font-bold text-xl mb-1">Driver & guide berpengalaman</h3>
+                        <p class="text-slate-500 dark:text-slate-400 text-sm">Tim ramah yang menguasai medan dan sejarah destinasi wisata Bandung.</p>
+                    </div>
+                </div>
+                <div class="flex items-start gap-4 p-6 bg-slate-50 dark:bg-slate-800/50 rounded-2xl hover:shadow-xl transition-all group">
+                    <div class="w-12 h-12 bg-primary rounded-full flex items-center justify-center text-white shrink-0 group-hover:scale-110 transition-transform">
+                        <span class="material-icons">payments</span>
+                    </div>
+                    <div>
+                        <h3 class="font-bold text-xl mb-1">Harga transparan</h3>
+                        <p class="text-slate-500 dark:text-slate-400 text-sm">Tanpa biaya tersembunyi. Semua kesepakatan jelas sejak awal pemesanan.</p>
+                    </div>
+                </div>
+                <div class="flex items-start gap-4 p-6 bg-slate-50 dark:bg-slate-800/50 rounded-2xl hover:shadow-xl transition-all group">
+                    <div class="w-12 h-12 bg-primary rounded-full flex items-center justify-center text-white shrink-0 group-hover:scale-110 transition-transform">
+                        <span class="material-icons">groups</span>
+                    </div>
+                    <div>
+                        <h3 class="font-bold text-xl mb-1">Cocok untuk keluarga & corporate</h3>
+                        <p class="text-slate-500 dark:text-slate-400 text-sm">Menangani group kecil (keluarga) hingga rombongan kantor besar.</p>
+                    </div>
+                </div>
+                <div class="flex items-start gap-4 p-6 bg-slate-50 dark:bg-slate-800/50 rounded-2xl hover:shadow-xl transition-all group">
+                    <div class="w-12 h-12 bg-primary rounded-full flex items-center justify-center text-white shrink-0 group-hover:scale-110 transition-transform">
+                        <span class="material-icons">chat</span>
+                    </div>
+                    <div>
+                        <h3 class="font-bold text-xl mb-1">Respon cepat via WhatsApp</h3>
+                        <p class="text-slate-500 dark:text-slate-400 text-sm">Tim CS aktif 24/7 untuk menjawab pertanyaan dan kebutuhan trip Anda.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="h-[600px] rounded-2xl overflow-hidden shadow-2xl reveal reveal-left bg-slate-200 dark:bg-slate-800">
+            <img alt="Tim Bandung Explore" class="w-full h-full object-cover" src="assets/images/tim-bandung-explore.jpeg"/>
+        </div>
+    </div>
+</section>
+
+<!-- Itinerary & Logistics Section -->
+<section id="details" class="py-24 px-6 bg-slate-900 text-white">
+    <div class="max-w-7xl mx-auto">
+        <div class="grid lg:grid-cols-2 gap-16">
+            <!-- Itinerary -->
+            <div class="reveal reveal-right">
+                <span class="text-primary font-bold tracking-[0.3em] uppercase text-xs mb-4 block">The Journey</span>
+                <h2 class="bebas text-5xl md:text-7xl mb-12">Itinerary Singkat <br/> <span class="text-primary/70 text-3xl md:text-5xl">Contoh Paket 2D1N</span></h2>
+                <div class="space-y-12 relative before:content-[''] before:absolute before:left-[1.65rem] before:top-4 before:bottom-4 before:w-[2px] before:bg-primary/20">
+                    <div class="relative pl-16">
+                        <div class="absolute left-0 top-0 w-14 h-14 bg-primary rounded-2xl flex items-center justify-center z-10 shadow-[0_0_20px_rgba(52,152,219,0.3)]">
+                            <span class="material-icons">looks_one</span>
+                        </div>
+                        <h3 class="bebas text-3xl mb-4">Hari 1: Jelajah Lembang</h3>
+                        <ul class="space-y-3 text-slate-400">
+                            <li class="flex items-center gap-3"><span class="w-1.5 h-1.5 bg-primary rounded-full"></span> Penjemputan di Stasiun/Bandara/Hotel</li>
+                            <li class="flex items-center gap-3"><span class="w-1.5 h-1.5 bg-primary rounded-full"></span> Explore Floating Market</li>
+                            <li class="flex items-center gap-3"><span class="w-1.5 h-1.5 bg-primary rounded-full"></span> Farmhouse Susu Lembang</li>
+                            <li class="flex items-center gap-3"><span class="w-1.5 h-1.5 bg-primary rounded-full"></span> Check-in Hotel & Makan Malam</li>
+                        </ul>
+                    </div>
+                    <div class="relative pl-16">
+                        <div class="absolute left-0 top-0 w-14 h-14 bg-primary rounded-2xl flex items-center justify-center z-10 shadow-[0_0_20px_rgba(52,152,219,0.3)]">
+                            <span class="material-icons">looks_two</span>
+                        </div>
+                        <h3 class="bebas text-3xl mb-4">Hari 2: Ciwidey & Heritage</h3>
+                        <ul class="space-y-3 text-slate-400">
+                            <li class="flex items-center gap-3"><span class="w-1.5 h-1.5 bg-primary rounded-full"></span> Kawah Putih Ciwidey</li>
+                            <li class="flex items-center gap-3"><span class="w-1.5 h-1.5 bg-primary rounded-full"></span> Glamping Lakeside Rancabali</li>
+                            <li class="flex items-center gap-3"><span class="w-1.5 h-1.5 bg-primary rounded-full"></span> Belanja Oleh-oleh Bandung</li>
+                            <li class="flex items-center gap-3"><span class="w-1.5 h-1.5 bg-primary rounded-full"></span> Drop Off Stasiun/Bandara</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Include/Exclude -->
+            <div class="reveal reveal-left" style="--delay: 0.2s">
+                <span class="text-primary font-bold tracking-[0.3em] uppercase text-xs mb-4 block">Amenities</span>
+                <h2 class="bebas text-5xl md:text-7xl mb-12">Include & Exclude</h2>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                    <div class="bg-slate-800/50 p-8 rounded-3xl border border-slate-700">
+                        <div class="flex items-center gap-3 text-primary mb-6">
+                            <span class="material-icons">check_circle</span>
+                            <span class="font-bold uppercase tracking-widest text-sm">Include</span>
+                        </div>
+                        <ul class="space-y-4 text-slate-300">
+                            <li class="flex gap-3"><span class="material-icons text-secondary text-base">done</span> Transport AC Prima</li>
+                            <li class="flex gap-3"><span class="material-icons text-secondary text-base">done</span> Driver Profesional & BBM</li>
+                            <li class="flex gap-3"><span class="material-icons text-secondary text-base">done</span> Tiket Masuk Objek Wisata</li>
+                            <li class="flex gap-3"><span class="material-icons text-secondary text-base">done</span> Dokumentasi Perjalanan</li>
+                            <li class="flex gap-3"><span class="material-icons text-secondary text-base">done</span> Air Mineral</li>
+                        </ul>
+                    </div>
+                    <div class="bg-slate-800/50 p-8 rounded-3xl border border-slate-700">
+                        <div class="flex items-center gap-3 text-red-400 mb-6">
+                            <span class="material-icons">cancel</span>
+                            <span class="font-bold uppercase tracking-widest text-sm">Exclude</span>
+                        </div>
+                        <ul class="space-y-4 text-slate-300">
+                            <li class="flex gap-3"><span class="material-icons text-red-400 text-base">close</span> Pengeluaran Pribadi</li>
+                            <li class="flex gap-3"><span class="material-icons text-red-400 text-base">close</span> Makan diluar Program</li>
+                            <li class="flex gap-3"><span class="material-icons text-red-400 text-base">close</span> Tiket Pesawat/Kereta ke Bandung</li>
+                            <li class="flex gap-3"><span class="material-icons text-red-400 text-base">close</span> Keperluan Tambahan</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Gallery Section -->
+<section id="destinations" class="py-24 px-6 max-w-7xl mx-auto">
+    <div class="text-center mb-16 reveal reveal-up">
+        <span class="text-primary font-bold tracking-[0.3em] uppercase text-xs mb-4 block">Galeri Perjalanan</span>
+        <h2 class="bebas text-5xl md:text-7xl">Momen Wisata Bersama Kami</h2>
+    </div>
+    <div class="grid grid-cols-1 md:grid-cols-12 gap-6">
+        <div class="md:col-span-12 h-[600px] rounded-2xl overflow-hidden relative group shadow-2xl reveal reveal-up bg-slate-200 dark:bg-slate-800">
+            <img alt="Momen Wisata Utama" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-1000" src="assets/images/galeri-utama-wisata.jpeg"/>
+            <div class="absolute inset-0 bg-black/20 group-hover:bg-black/0 transition-colors duration-500"></div>
+            <div class="absolute bottom-12 left-1/2 -translate-x-1/2 md:left-8 md:translate-x-0">
+                <button class="glass text-white px-8 py-4 rounded-full flex items-center gap-3 hover:bg-white hover:text-slate-900 transition-all shadow-xl group/btn">
+                    <span class="material-icons text-xl group-hover/btn:rotate-12 transition-transform">camera_alt</span>
+                    <span class="text-sm font-bold uppercase tracking-wider">Follow us on @bandung.explore</span>
+                </button>
+            </div>
+        </div>
+        <div class="md:col-span-4 h-80 rounded-2xl overflow-hidden shadow-lg group reveal reveal-up bg-slate-200 dark:bg-slate-800" style="--delay: 0.1s">
+            <img alt="Kegiatan Wisata 1" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" src="assets/images/galeri-detail-wisata-1.jpg"/>
+        </div>
+        <div class="md:col-span-4 h-80 rounded-2xl overflow-hidden shadow-lg group reveal reveal-up bg-slate-200 dark:bg-slate-800" style="--delay: 0.2s">
+            <img alt="Kegiatan Wisata 2" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" src="assets/images/galeri-detail-wisata-2.jpeg"/>
+        </div>
+        <div class="md:col-span-4 h-80 rounded-2xl overflow-hidden shadow-lg group reveal reveal-up bg-slate-200 dark:bg-slate-800" style="--delay: 0.3s">
+            <img alt="Kegiatan Wisata 3" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" src="assets/images/galeri-detail-wisata-3.jpeg"/>
+        </div>
+    </div>
+</section>
+
+<!-- Testimonial Section -->
+<section class="py-24 bg-slate-50 dark:bg-slate-900/50">
+    <div class="max-w-7xl mx-auto px-6">
+        <div class="grid lg:grid-cols-2 gap-16 items-center">
+            <div class="relative reveal reveal-right bg-slate-200 dark:bg-slate-800 rounded-2xl">
+                <div class="rounded-2xl overflow-hidden h-[500px] shadow-2xl">
+                    <img alt="Happy Traveler" class="w-full h-full object-cover" src="assets/images/testimoni-pelanggan-puas.jpeg"/>
+                </div>
+                <div class="absolute -bottom-6 -right-6 bg-primary p-8 rounded-2xl text-white hidden md:block shadow-2xl transform hover:scale-105 transition-transform">
+                    <div class="flex gap-1 mb-2">
+                        <span class="material-icons text-sm text-yellow-300">star</span>
+                        <span class="material-icons text-sm text-yellow-300">star</span>
+                        <span class="material-icons text-sm text-yellow-300">star</span>
+                        <span class="material-icons text-sm text-yellow-300">star</span>
+                        <span class="material-icons text-sm text-yellow-300">star</span>
+                    </div>
+                    <p class="font-bold text-lg">Andi Kurniawan</p>
+                    <p class="text-sm opacity-80">Trip Keluarga - Jakarta</p>
+                </div>
+            </div>
+            <div class="reveal reveal-left" style="--delay: 0.2s">
+                <span class="text-primary font-bold tracking-[0.3em] uppercase text-xs mb-4 block">Testimonial</span>
+                <h2 class="bebas text-5xl md:text-7xl mb-8">Apa Kata Mereka</h2>
+                <div class="space-y-12">
+                    <div class="relative">
+                        <svg class="absolute -top-8 -left-6 w-16 h-16 text-primary/10 fill-current" viewBox="0 0 24 24"><path d="M14.017 21L14.017 18C14.017 16.8954 14.9124 16 16.017 16H19.017C19.5693 16 20.017 15.5523 20.017 15V9C20.017 8.44772 19.5693 8 19.017 8H16.017C14.9124 8 14.017 7.10457 14.017 6V5C14.017 3.34315 15.3602 2 17.017 2H20.017C21.6739 2 23.017 3.34315 23.017 5V15C23.017 18.3137 20.3307 21 17.017 21H14.017ZM1 21L1 18C1 16.8954 1.89543 16 3 16H6C6.55228 16 7 15.5523 7 15V9C7 8.44772 6.55228 8 6 8H3C1.89543 8 1 7.10457 1 6V5C1 3.34315 2.34315 2 4 2H7C8.65685 2 10 3.34315 10 5V15C10 18.3137 7.31371 21 4 21H1ZM3 4C2.44772 4 2 4.44772 2 5V6C2 6.55228 2.44772 7 3 7H6C7.10457 7 8 7.89543 8 9V15C8 17.2091 6.20914 19 4 19H3C2.44772 19 2 18.5523 2 18V18C2 17.4477 2.44772 17 3 17H6C6.55228 17 7 16.5523 7 16V15H3C2.44772 15 2 14.5523 2 14V9C2 7.34315 3.34315 6 5 6H7V5C7 4.44772 6.55228 4 6 4H3ZM16.017 4C15.4647 4 15.017 4.44772 15.017 5V6C15.017 6.55228 15.4647 7 16.017 7H19.017C20.1216 7 21.017 7.89543 21.017 9V15C21.017 17.2091 19.2261 19 17.017 19H16.017C15.4647 19 15.017 18.5523 15.017 18V18C15.017 17.4477 15.4647 17 16.017 17H19.017C19.5693 17 20.017 16.5523 20.017 16V15H16.017C15.4647 15 15.017 14.5523 15.017 14V9C15.017 7.34315 16.3602 6 18.017 6H20.017V5C20.017 4.44772 19.5693 4 19.017 4H16.017Z"></path></svg>
+                        <p class="text-xl md:text-2xl text-slate-600 dark:text-slate-400 italic mb-6 leading-relaxed relative z-10">
+                            "Pelayanannya ramah dan tepat waktu. Trip keluarga jadi lebih santai dan terorganisir. Bandung emang asik kalo jalannya nggak pake ribet!"
+                        </p>
+                        <div class="flex items-center gap-4">
+                            <div class="w-12 h-12 rounded-full overflow-hidden bg-primary/20 flex items-center justify-center">
+                                <span class="material-icons text-primary">person</span>
+                            </div>
+                            <div>
+                                <p class="font-bold text-lg">Andi Kurniawan</p>
+                                <p class="text-sm text-slate-500">Entrepreneur, Jakarta</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="relative">
+                        <svg class="absolute -top-8 -left-6 w-16 h-16 text-primary/10 fill-current" viewBox="0 0 24 24"><path d="M14.017 21L14.017 18C14.017 16.8954 14.9124 16 16.017 16H19.017C19.5693 16 20.017 15.5523 20.017 15V9C20.017 8.44772 19.5693 8 19.017 8H16.017C14.9124 8 14.017 7.10457 14.017 6V5C14.017 3.34315 15.3602 2 17.017 2H20.017C21.6739 2 23.017 3.34315 23.017 5V15C23.017 18.3137 20.3307 21 17.017 21H14.017ZM1 21L1 18C1 16.8954 1.89543 16 3 16H6C6.55228 16 7 15.5523 7 15V9C7 8.44772 6.55228 8 6 8H3C1.89543 8 1 7.10457 1 6V5C1 3.34315 2.34315 2 4 2H7C8.65685 2 10 3.34315 10 5V15C10 18.3137 7.31371 21 4 21H1ZM3 4C2.44772 4 2 4.44772 2 5V6C2 6.55228 2.44772 7 3 7H6C7.10457 7 8 7.89543 8 9V15C8 17.2091 6.20914 19 4 19H3C2.44772 19 2 18.5523 2 18V18C2 17.4477 2.44772 17 3 17H6C6.55228 17 7 16.5523 7 16V15H3C2.44772 15 2 14.5523 2 14V9C2 7.34315 3.34315 6 5 6H7V5C7 4.44772 6.55228 4 6 4H3ZM16.017 4C15.4647 4 15.017 4.44772 15.017 5V6C15.017 6.55228 15.4647 7 16.017 7H19.017C20.1216 7 21.017 7.89543 21.017 9V15C21.017 17.2091 19.2261 19 17.017 19H16.017C15.4647 19 15.017 18.5523 15.017 18V18C15.017 17.4477 15.4647 17 16.017 17H19.017C19.5693 17 20.017 16.5523 20.017 16V15H16.017C15.4647 15 15.017 14.5523 15.017 14V9C15.017 7.34315 16.3602 6 18.017 6H20.017V5C20.017 4.44772 19.5693 4 19.017 4H16.017Z"></path></svg>
+                        <p class="text-xl md:text-2xl text-slate-600 dark:text-slate-400 italic mb-6 leading-relaxed relative z-10">
+                            "Websitenya jelas, booking gampang, respon admin cepat banget di WA. Udah 2x pake jasa Vacasky buat tamu kantor, selalu puas!"
+                        </p>
+                        <div class="flex items-center gap-4">
+                            <div class="w-12 h-12 rounded-full overflow-hidden bg-primary/20 flex items-center justify-center">
+                                <span class="material-icons text-primary">person</span>
+                            </div>
+                            <div>
+                                <p class="font-bold text-lg">Rina Septiani</p>
+                                <p class="text-sm text-slate-500">Corporate Secretary, Bandung</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Closing CTA Section -->
+<section class="py-32 px-6 relative overflow-hidden bg-primary">
+    <div class="absolute inset-0 bg-cover bg-center mix-blend-overlay opacity-30" style="background-image: url('assets/images/footer-cta-background.jpeg')"></div>
+    <div class="max-w-4xl mx-auto text-center relative z-10 reveal reveal-up">
+        <h2 class="bebas text-6xl md:text-8xl text-white mb-8">Siap Liburan <br/> Tanpa Ribet?</h2>
+        <p class="text-white/80 text-xl mb-12 max-w-2xl mx-auto">Konsultasikan rencana perjalanan Anda bersama tim profesional kami secara gratis.</p>
+        <div class="flex flex-col md:flex-row items-center justify-center gap-6">
+            <a href="https://wa.me/yournumber" class="bg-white text-primary px-10 py-5 rounded-full text-xl font-bold hover:scale-105 transition-all shadow-2xl flex items-center gap-3">
+                <span class="material-icons">chat</span> Konsultasi Gratis via WhatsApp
+            </a>
+            <a href="#tours" class="text-white font-bold hover:underline underline-offset-8">Kembali ke Paket Tour</a>
+        </div>
+    </div>
+</section>
+
+<!-- Footer -->
+<footer class="bg-slate-900 text-white pt-24 pb-12">
+    <div class="max-w-7xl mx-auto px-6">
+        <div class="grid grid-cols-1 md:grid-cols-4 gap-12 mb-16">
+            <div class="col-span-1 md:col-span-1">
+                <div class="flex items-center gap-2 mb-8">
+                    <span class="material-icons text-primary text-3xl">cloud</span>
+                    <span class="bebas text-2xl tracking-wider">VACASKY</span>
+                </div>
+                <p class="text-slate-400 leading-relaxed mb-8">
+                    The ultimate choice for travelers seeking premium experiences and authentic adventures across the globe.
+                </p>
+                <div class="flex gap-4">
+                    <a class="w-10 h-10 rounded-full bg-slate-800 flex items-center justify-center hover:bg-primary transition-all hover:scale-110" href="#">
+                        <i class="material-icons text-xl">facebook</i>
+                    </a>
+                    <a class="w-10 h-10 rounded-full bg-slate-800 flex items-center justify-center hover:bg-primary transition-all hover:scale-110" href="#">
+                        <i class="material-icons text-xl">camera_alt</i>
+                    </a>
+                    <a class="w-10 h-10 rounded-full bg-slate-800 flex items-center justify-center hover:bg-primary transition-all hover:scale-110" href="#">
+                        <i class="material-icons text-xl">alternate_email</i>
+                    </a>
+                </div>
+            </div>
+            <div>
+                <h4 class="font-bold mb-8 uppercase tracking-widest text-sm text-white">Services</h4>
+                <ul class="space-y-4 text-slate-400">
+                    <li><a class="hover:text-primary transition-colors flex items-center gap-2" href="#"><span class="material-icons text-xs">chevron_right</span> Tour Package</a></li>
+                    <li><a class="hover:text-primary transition-colors flex items-center gap-2" href="#"><span class="material-icons text-xs">chevron_right</span> Hotel Booking</a></li>
+                    <li><a class="hover:text-primary transition-colors flex items-center gap-2" href="#"><span class="material-icons text-xs">chevron_right</span> Flight Booking</a></li>
+                    <li><a class="hover:text-primary transition-colors flex items-center gap-2" href="#"><span class="material-icons text-xs">chevron_right</span> Cruise Travel</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4 class="font-bold mb-8 uppercase tracking-widest text-sm text-white">Company</h4>
+                <ul class="space-y-4 text-slate-400">
+                    <li><a class="hover:text-primary transition-colors flex items-center gap-2" href="#"><span class="material-icons text-xs">chevron_right</span> About Us</a></li>
+                    <li><a class="hover:text-primary transition-colors flex items-center gap-2" href="#"><span class="material-icons text-xs">chevron_right</span> Contact</a></li>
+                    <li><a class="hover:text-primary transition-colors flex items-center gap-2" href="#"><span class="material-icons text-xs">chevron_right</span> Careers</a></li>
+                    <li><a class="hover:text-primary transition-colors flex items-center gap-2" href="#"><span class="material-icons text-xs">chevron_right</span> Privacy Policy</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4 class="font-bold mb-8 uppercase tracking-widest text-sm text-white">Newsletter</h4>
+                <p class="text-slate-400 mb-6 text-sm">Subscribe to get latest travel news and special offers.</p>
+                <div class="relative group">
+                    <input class="w-full bg-slate-800 border border-slate-700 rounded-lg px-4 py-4 text-sm focus:ring-2 focus:ring-primary outline-none transition-all" placeholder="Your email address" type="email"/>
+                    <button class="absolute right-2 top-2 bg-primary text-white p-2 rounded-md hover:bg-blue-600 transition-colors">
+                        <span class="material-icons text-sm">send</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <div class="pt-8 border-t border-slate-800 text-center text-slate-500 text-sm">
+            <p>© 2024 Vacasky Travel Agency. Made with ❤️ for explorers.</p>
+        </div>
+    </div>
+</footer>
+
+<script>
+    // Dark Mode Toggle
+    const themeToggle = document.getElementById('theme-toggle');
+    const html = document.documentElement;
+
+    // Check system preference
+    if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+        html.classList.add('dark');
+    }
+
+    themeToggle.addEventListener('click', () => {
+        html.classList.toggle('dark');
+    });
+
+    // Mobile Menu Toggle
+    const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+    const mobileMenu = document.getElementById('mobile-menu');
+
+    mobileMenuBtn.addEventListener('click', () => {
+        mobileMenu.classList.toggle('hidden');
+        const icon = mobileMenuBtn.querySelector('.material-icons');
+        icon.textContent = mobileMenu.classList.contains('hidden') ? 'menu' : 'close';
+    });
+
+    // Close mobile menu on link click
+    mobileMenu.querySelectorAll('a').forEach(link => {
+        link.addEventListener('click', () => {
+            mobileMenu.classList.add('hidden');
+            mobileMenuBtn.querySelector('.material-icons').textContent = 'menu';
+        });
+    });
+
+    // Enhanced scroll animation trigger
+    const observerOptions = {
+        threshold: 0.15,
+        rootMargin: "0px 0px -50px 0px"
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('active');
+                // If it's a section without the reveal class, keep old behavior
+                if (entry.target.tagName === 'SECTION' && !entry.target.classList.contains('reveal')) {
+                    entry.target.classList.add('fade-in');
+                }
+                observer.unobserve(entry.target);
+            }
+        });
+    }, observerOptions);
+
+    // Initialize all reveal elements
+    document.querySelectorAll('.reveal').forEach(el => {
+        observer.observe(el);
+    });
+
+    // Also observe sections for basic fade if they don't have reveal
+    document.querySelectorAll('section:not(.reveal)').forEach(section => {
+        section.style.opacity = '0';
+        observer.observe(section);
+    });
+</script>
+
+</body>
+</html>

@@ -1,0 +1,17 @@
+{
+  "name": "vacasky-landing-page",
+  "version": "1.0.0",
+  "description": "Modern Minimalist Travel Landing Page",
+  "main": "index.html",
+  "scripts": {
+    "start": "npx serve .",
+    "dev": "npx serve ."
+  },
+  "keywords": [
+    "travel",
+    "landing-page",
+    "tailwind"
+  ],
+  "author": "",
+  "license": "ISC"
+}
