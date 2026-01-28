@@ -10,7 +10,7 @@
     <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com" rel="preconnect"/>
     <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
-    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&family=Bebas+Neue&display=swap" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&family=Bebas+Neue&family=Plus+Jakarta+Sans:wght@700;800&family=Syne:wght@700;800&display=swap" rel="stylesheet"/>
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"/>
     
     <!-- Tailwind CSS CDN (Using user's choice) -->
@@ -51,6 +51,8 @@
     <style>
         .bebas { font-family: 'Bebas Neue', cursive; }
         .outfit { font-family: 'Outfit', sans-serif; }
+        .jakarta { font-family: 'Plus Jakarta Sans', sans-serif; }
+        .syne { font-family: 'Syne', sans-serif; }
         
         /* Custom scrollbar */
         ::-webkit-scrollbar {
@@ -120,7 +122,7 @@
     <div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
         <div class="flex items-center gap-4 group cursor-pointer">
             <img src="assets/images/logo.png" alt="Bandung Explore Logo" class="w-10 h-10 object-contain group-hover:scale-110 transition-transform">
-            <span class="bebas text-2xl tracking-wider">Bandung Explore</span>
+            <span class="jakarta text-xl font-extrabold tracking-tight text-slate-900 dark:text-white">Bandung <span class="text-primary">Explore</span></span>
         </div>
         <div class="hidden md:flex items-center gap-10">
             <a class="text-sm font-semibold hover:text-primary transition-colors relative after:content-[''] after:absolute after:bottom-[-4px] after:left-0 after:w-0 after:h-[2px] after:bg-primary hover:after:w-full after:transition-all" href="#tours">Paket Tour</a>
@@ -198,264 +200,320 @@ Pilih paketnya, kami urus semuanya.</p>
     </div>
 </header>
 
-<!-- Tour Packages Section -->
-<section id="tours" class="py-24 px-6 bg-slate-50 dark:bg-slate-900/50">
+<!-- Tour Packages Section (Minimalist Premium Split Layout) -->
+<section id="tours" class="py-24 px-6 bg-white dark:bg-slate-900">
     <div class="max-w-7xl mx-auto">
-        <div class="text-center mb-16 reveal reveal-up">
-            <span class="text-primary font-bold tracking-[0.3em] uppercase text-xs mb-4 block">Best Offers</span>
-            <h2 class="bebas text-5xl md:text-7xl">Pilihan Paket Tour</h2>
+        <div class="max-w-3xl mb-20 reveal reveal-up">
+            <span class="text-primary font-bold tracking-[0.3em] uppercase text-xs mb-4 block">Exclusive Tours</span>
+            <h2 class="jakarta text-5xl md:text-6xl font-extrabold mb-6">Pilihan Paket <br/><span class="text-primary">Terbaik Kami</span></h2>
+            <p class="text-lg text-slate-500 dark:text-slate-400">Setiap perjalanan dirancang khusus untuk memberikan pengalaman yang personal dan berkesan selama di Bandung.</p>
         </div>
 
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-            <!-- Paket 1 -->
-            <div class="bg-white dark:bg-slate-800 rounded-3xl overflow-hidden shadow-xl hover:shadow-2xl transition-all group reveal reveal-up" style="--delay: 0.1s">
-                <div class="h-56 relative overflow-hidden bg-slate-100 dark:bg-slate-700">
-                    <img src="assets/images/paket-one-day-trip.jpeg" alt="Bandung Day Trip" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700">
-                    <div class="absolute top-4 left-4 bg-primary text-white text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wider">Most Popular</div>
+        <div class="space-y-32">
+            <!-- Paket 1: One Day Trip -->
+            <div class="grid lg:grid-cols-2 gap-12 items-center group">
+                <div class="h-[400px] md:h-[500px] rounded-[2rem] overflow-hidden shadow-2xl reveal reveal-right relative">
+                    <img src="assets/images/paket-one-day-trip.jpeg" alt="Bandung One Day Trip" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-1000">
+                    <div class="absolute top-6 left-6 bg-white/90 backdrop-blur-md px-4 py-2 rounded-full text-xs font-bold uppercase tracking-wider text-slate-900 shadow-xl">Best Seller</div>
                 </div>
-                <div class="p-8">
-                    <div class="flex items-center gap-2 text-slate-500 dark:text-slate-400 text-xs mb-3 uppercase tracking-widest font-bold">
-                        <span class="material-icons text-sm text-primary">schedule</span> 1 Day Trip
+                <div class="reveal reveal-left" style="--delay: 0.2s">
+                    <div class="flex items-center gap-3 text-primary mb-6">
+                        <span class="material-icons">schedule</span>
+                        <span class="font-bold text-sm uppercase tracking-widest">Full Day Adventure</span>
                     </div>
-                    <h3 class="bebas text-3xl mb-4 group-hover:text-primary transition-colors">Bandung One Day Trip</h3>
-                    <ul class="space-y-2 mb-8">
-                        <li class="text-sm text-slate-600 dark:text-slate-400 flex items-center gap-2">
-                            <span class="material-icons text-xs text-primary">location_on</span> Kawah Putih
-                        </li>
-                        <li class="text-sm text-slate-600 dark:text-slate-400 flex items-center gap-2">
-                            <span class="material-icons text-xs text-primary">location_on</span> Orchid Forest
-                        </li>
-                        <li class="text-sm text-slate-600 dark:text-slate-400 flex items-center gap-2">
-                            <span class="material-icons text-xs text-primary">location_on</span> Ciwidey
-                        </li>
-                    </ul>
-                    <div class="pt-6 border-t border-slate-100 dark:border-slate-700 flex flex-col gap-4">
-                        <div>
-                            <p class="text-xs text-slate-400 uppercase font-bold tracking-widest">Harga mulai dari</p>
-                            <p class="text-2xl font-bold text-slate-900 dark:text-white">Rp 350rb <span class="text-sm font-normal text-slate-500">/pax</span></p>
+                    <h3 class="jakarta text-4xl font-extrabold mb-6">Bandung One Day Trip</h3>
+                    <p class="text-slate-600 dark:text-slate-400 mb-8 leading-relaxed text-lg">Solusi liburan praktis bagi Anda yang punya waktu terbatas. Kami pilihkan destinasi terbaik agar satu hari Anda di Bandung terasa maksimal dan menyenangkan.</p>
+                    <div class="grid grid-cols-2 gap-6 mb-10">
+                        <div class="flex items-center gap-3 text-slate-700 dark:text-slate-300">
+                            <span class="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center text-primary shrink-0">
+                                <span class="material-icons text-sm">place</span>
+                            </span>
+                            <span class="text-sm font-semibold">Lembang & Raya</span>
                         </div>
-                        <button class="w-full bg-slate-900 dark:bg-primary text-white py-4 rounded-2xl font-bold hover:opacity-90 transition-all flex items-center justify-center gap-2 group/btn">
-                            Detail & Booking <span class="material-icons text-sm transform group-hover/btn:translate-x-1 transition-transform">arrow_forward</span>
-                        </button>
+                        <div class="flex items-center gap-3 text-slate-700 dark:text-slate-300">
+                            <span class="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center text-primary shrink-0">
+                                <span class="material-icons text-sm">restaurant</span>
+                            </span>
+                            <span class="text-sm font-semibold">Kuliner Khas</span>
+                        </div>
+                    </div>
+                    <div class="flex items-center justify-between border-t border-slate-100 dark:border-slate-800 pt-8 mt-auto">
+                        <div>
+                            <p class="text-xs text-slate-400 uppercase font-bold tracking-widest mb-1">Mulai Dari</p>
+                            <p class="text-3xl font-extrabold text-slate-900 dark:text-white">Rp 350.000<span class="text-sm text-slate-500 font-normal"> /pax</span></p>
+                        </div>
+                        <a href="https://wa.me/yournumber" class="bg-slate-900 dark:bg-primary text-white px-8 py-4 rounded-full font-bold hover:scale-105 transition-all shadow-xl">Pesan Sekarang</a>
                     </div>
                 </div>
             </div>
 
-            <!-- Paket 2 -->
-            <div class="bg-white dark:bg-slate-800 rounded-3xl overflow-hidden shadow-xl hover:shadow-2xl transition-all group reveal reveal-up" style="--delay: 0.2s">
-                <div class="h-56 relative overflow-hidden bg-slate-100 dark:bg-slate-700">
-                    <img src="assets/images/paket-2d1n-lembang.jpeg" alt="Bandung 2D1N" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700">
+            <!-- Paket 2: 2D1N (Reverse Content) -->
+            <div class="grid lg:grid-cols-2 gap-12 items-center group">
+                <div class="lg:order-2 h-[400px] md:h-[500px] rounded-[2rem] overflow-hidden shadow-2xl reveal reveal-left">
+                    <img src="assets/images/paket-2d1n-lembang.jpeg" alt="Bandung 2D1N" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-1000">
                 </div>
-                <div class="p-8">
-                    <div class="flex items-center gap-2 text-slate-500 dark:text-slate-400 text-xs mb-3 uppercase tracking-widest font-bold">
-                        <span class="material-icons text-sm text-primary">hotel</span> 2D 1N
+                <div class="lg:order-1 reveal reveal-right" style="--delay: 0.2s">
+                    <div class="flex items-center gap-3 text-primary mb-6">
+                        <span class="material-icons">hotel</span>
+                        <span class="font-bold text-sm uppercase tracking-widest">Two Days One Night</span>
                     </div>
-                    <h3 class="bebas text-3xl mb-4 group-hover:text-primary transition-colors">Bandung 2D1N</h3>
-                    <ul class="space-y-2 mb-8">
-                        <li class="text-sm text-slate-600 dark:text-slate-400 flex items-center gap-2">
-                            <span class="material-icons text-xs text-primary">location_on</span> Floating Market
-                        </li>
-                        <li class="text-sm text-slate-600 dark:text-slate-400 flex items-center gap-2">
-                            <span class="material-icons text-xs text-primary">location_on</span> Tangkuban Perahu
-                        </li>
-                        <li class="text-sm text-slate-600 dark:text-slate-400 flex items-center gap-2">
-                            <span class="material-icons text-xs text-primary">location_on</span> Asia Africa
-                        </li>
-                    </ul>
-                    <div class="pt-6 border-t border-slate-100 dark:border-slate-700 flex flex-col gap-4">
-                        <div>
-                            <p class="text-xs text-slate-400 uppercase font-bold tracking-widest">Harga mulai dari</p>
-                            <p class="text-2xl font-bold text-slate-900 dark:text-white">Rp 850rb <span class="text-sm font-normal text-slate-500">/pax</span></p>
+                    <h3 class="jakarta text-4xl font-extrabold mb-6">Paket Santai 2D1N</h3>
+                    <p class="text-slate-600 dark:text-slate-400 mb-8 leading-relaxed text-lg">Nikmati suasana Bandung lebih lama. Paket ini menggabungkan kesejukan Lembang dan keunikan Ciwidey, lengkap dengan penginapan pilihan yang nyaman.</p>
+                    <div class="grid grid-cols-2 gap-6 mb-10">
+                        <div class="flex items-center gap-3 text-slate-700 dark:text-slate-300">
+                            <span class="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center text-primary shrink-0">
+                                <span class="material-icons text-sm">mountain_flag</span>
+                            </span>
+                            <span class="text-sm font-semibold">Ciwidey & Kawah</span>
                         </div>
-                        <button class="w-full bg-slate-900 dark:bg-primary text-white py-4 rounded-2xl font-bold hover:opacity-90 transition-all flex items-center justify-center gap-2 group/btn">
-                            Detail & Booking <span class="material-icons text-sm transform group-hover/btn:translate-x-1 transition-transform">arrow_forward</span>
-                        </button>
+                        <div class="flex items-center gap-3 text-slate-700 dark:text-slate-300">
+                            <span class="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center text-primary shrink-0">
+                                <span class="material-icons text-sm">shopping_bag</span>
+                            </span>
+                            <span class="text-sm font-semibold">Belanja Oleh-oleh</span>
+                        </div>
+                    </div>
+                    <div class="flex items-center justify-between border-t border-slate-100 dark:border-slate-800 pt-8 mt-auto">
+                        <div>
+                            <p class="text-xs text-slate-400 uppercase font-bold tracking-widest mb-1">Mulai Dari</p>
+                            <p class="text-3xl font-extrabold text-slate-900 dark:text-white">Rp 1.150.000<span class="text-sm text-slate-500 font-normal"> /pax</span></p>
+                        </div>
+                        <a href="https://wa.me/yournumber" class="bg-slate-900 dark:bg-primary text-white px-8 py-4 rounded-full font-bold hover:scale-105 transition-all shadow-xl">Pesan Sekarang</a>
                     </div>
                 </div>
             </div>
 
-            <!-- Paket 3 -->
-            <div class="bg-white dark:bg-slate-800 rounded-3xl overflow-hidden shadow-xl hover:shadow-2xl transition-all group reveal reveal-up" style="--delay: 0.3s">
-                <div class="h-56 relative overflow-hidden bg-slate-100 dark:bg-slate-700">
-                    <img src="assets/images/paket-3d2n-lengkap.jpeg" alt="Bandung 3D2N" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700">
-                </div>
-                <div class="p-8">
-                    <div class="flex items-center gap-2 text-slate-500 dark:text-slate-400 text-xs mb-3 uppercase tracking-widest font-bold">
-                        <span class="material-icons text-sm text-primary">luggage</span> 3D 2N
-                    </div>
-                    <h3 class="bebas text-3xl mb-4 group-hover:text-primary transition-colors">Bandung 3D2N</h3>
-                    <ul class="space-y-2 mb-8">
-                        <li class="text-sm text-slate-600 dark:text-slate-400 flex items-center gap-2">
-                            <span class="material-icons text-xs text-primary">location_on</span> Dusun Bambu
-                        </li>
-                        <li class="text-sm text-slate-600 dark:text-slate-400 flex items-center gap-2">
-                            <span class="material-icons text-xs text-primary">location_on</span> Farmhouse
-                        </li>
-                        <li class="text-sm text-slate-600 dark:text-slate-400 flex items-center gap-2">
-                            <span class="material-icons text-xs text-primary">location_on</span> Tea Plantation
-                        </li>
-                    </ul>
-                    <div class="pt-6 border-t border-slate-100 dark:border-slate-700 flex flex-col gap-4">
-                        <div>
-                            <p class="text-xs text-slate-400 uppercase font-bold tracking-widest">Harga mulai dari</p>
-                            <p class="text-2xl font-bold text-slate-900 dark:text-white">Rp 1.5jt <span class="text-sm font-normal text-slate-500">/pax</span></p>
-                        </div>
-                        <button class="w-full bg-slate-900 dark:bg-primary text-white py-4 rounded-2xl font-bold hover:opacity-90 transition-all flex items-center justify-center gap-2 group/btn">
-                            Detail & Booking <span class="material-icons text-sm transform group-hover/btn:translate-x-1 transition-transform">arrow_forward</span>
-                        </button>
+            <!-- Paket 3: Custom Trip -->
+            <div class="grid lg:grid-cols-2 gap-12 items-center group">
+                <div class="h-[400px] md:h-[500px] rounded-[2rem] overflow-hidden shadow-2xl reveal reveal-right relative bg-primary flex items-center justify-center">
+                    <img src="assets/images/paket-3d2n-lengkap.jpeg" alt="Custom Trip" class="absolute inset-0 w-full h-full object-cover opacity-30 group-hover:scale-110 transition-transform duration-1000">
+                    <div class="relative z-10 text-center text-white p-8">
+                        <span class="material-icons text-8xl mb-6 opacity-40">auto_awesome</span>
+                        <h4 class="jakarta text-3xl font-bold">Rancang Rute Sendiri</h4>
                     </div>
                 </div>
-            </div>
-
-            <!-- Paket 4 -->
-            <div class="bg-primary p-8 rounded-3xl overflow-hidden shadow-xl hover:shadow-2xl transition-all group flex flex-col justify-between text-white reveal reveal-up" style="--delay: 0.4s">
-                <div>
-                    <div class="w-16 h-16 bg-white/20 rounded-2xl flex items-center justify-center mb-8">
-                        <span class="material-icons text-4xl">edit_note</span>
+                <div class="reveal reveal-left" style="--delay: 0.2s">
+                    <div class="flex items-center gap-3 text-primary mb-6">
+                        <span class="material-icons">edit_road</span>
+                        <span class="font-bold text-sm uppercase tracking-widest">Tailored Experience</span>
                     </div>
-                    <h3 class="bebas text-4xl mb-4">Custom Trip (Request)</h3>
-                    <p class="opacity-90 mb-8">Punya destinasi impian sendiri atau butuh itinerari khusus? Kami siap mengatur rute perjalanan sesuai keinginanmu.</p>
+                    <h3 class="jakarta text-4xl font-extrabold mb-6">Custom Trip (Request)</h3>
+                    <p class="text-slate-600 dark:text-slate-400 mb-8 leading-relaxed text-lg">Punya rencana perjalanan impian sendiri? Tim kami siap membantu merancang rute paling efisien dan menyenangkan khusus untuk rombongan Anda.</p>
                     <ul class="space-y-4 mb-12">
-                        <li class="flex items-center gap-3"><span class="material-icons text-sm">check_circle</span> Rute Fleksibel</li>
-                        <li class="flex items-center gap-3"><span class="material-icons text-sm">check_circle</span> Pilihan Kendaraan</li>
-                        <li class="flex items-center gap-3"><span class="material-icons text-sm">check_circle</span> Budget Menyesuaikan</li>
+                        <li class="flex items-center gap-4 text-slate-700 dark:text-slate-300 font-semibold">
+                            <span class="material-icons text-primary text-sm">stars</span> Group Kecil & Besar (Keluarga/Kantor)
+                        </li>
+                        <li class="flex items-center gap-4 text-slate-700 dark:text-slate-300 font-semibold">
+                            <span class="material-icons text-primary text-sm">stars</span> Pilihan Kendaraan Beragam & Premium
+                        </li>
                     </ul>
-                </div>
-                <div>
-                    <p class="text-xs uppercase font-bold tracking-widest opacity-80 mb-4">Mulai Konsultasi</p>
-                    <button class="w-full bg-white text-primary py-4 rounded-2xl font-bold hover:bg-slate-100 transition-all flex items-center justify-center gap-2 group/btn">
-                        Hubungi Kami <span class="material-icons text-sm transform group-hover/btn:translate-x-1 transition-transform">chat</span>
-                    </button>
+                    <div class="border-t border-slate-100 dark:border-slate-800 pt-8 mt-auto">
+                        <a href="https://wa.me/yournumber" class="inline-flex items-center gap-3 bg-primary text-white px-10 py-5 rounded-full font-bold hover:scale-110 transition-all shadow-2xl">
+                            <span class="material-icons">chat</span> Konsultasi Rute Gratis
+                        </a>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
 </section>
 
-<!-- Why Choose Us Section -->
-<section id="why-us" class="py-24 px-6 max-w-7xl mx-auto">
-    <div class="grid lg:grid-cols-2 gap-16 items-center">
-        <div class="reveal reveal-right">
-            <span class="text-primary font-bold tracking-[0.3em] uppercase text-xs mb-4 block">Our Excellence</span>
-            <h2 class="bebas text-5xl md:text-7xl mb-8">Kenapa Pilih Kami</h2>
-            <div class="space-y-6">
-                <div class="flex items-start gap-4 p-6 bg-slate-50 dark:bg-slate-800/50 rounded-2xl hover:shadow-xl transition-all group">
-                    <div class="w-12 h-12 bg-primary rounded-full flex items-center justify-center text-white shrink-0 group-hover:scale-110 transition-transform">
-                        <span class="material-icons">directions_car</span>
-                    </div>
-                    <div>
-                        <h3 class="font-bold text-xl mb-1">Armada nyaman & terawat</h3>
-                        <p class="text-slate-500 dark:text-slate-400 text-sm">Kendaraan terbaru, bersih, dan wangi untuk kenyamanan maksimal Anda.</p>
-                    </div>
-                </div>
-                <div class="flex items-start gap-4 p-6 bg-slate-50 dark:bg-slate-800/50 rounded-2xl hover:shadow-xl transition-all group">
-                    <div class="w-12 h-12 bg-primary rounded-full flex items-center justify-center text-white shrink-0 group-hover:scale-110 transition-transform">
-                        <span class="material-icons">person</span>
-                    </div>
-                    <div>
-                        <h3 class="font-bold text-xl mb-1">Driver & guide berpengalaman</h3>
-                        <p class="text-slate-500 dark:text-slate-400 text-sm">Tim ramah yang menguasai medan dan sejarah destinasi wisata Bandung.</p>
-                    </div>
-                </div>
-                <div class="flex items-start gap-4 p-6 bg-slate-50 dark:bg-slate-800/50 rounded-2xl hover:shadow-xl transition-all group">
-                    <div class="w-12 h-12 bg-primary rounded-full flex items-center justify-center text-white shrink-0 group-hover:scale-110 transition-transform">
-                        <span class="material-icons">payments</span>
-                    </div>
-                    <div>
-                        <h3 class="font-bold text-xl mb-1">Harga transparan</h3>
-                        <p class="text-slate-500 dark:text-slate-400 text-sm">Tanpa biaya tersembunyi. Semua kesepakatan jelas sejak awal pemesanan.</p>
-                    </div>
-                </div>
-                <div class="flex items-start gap-4 p-6 bg-slate-50 dark:bg-slate-800/50 rounded-2xl hover:shadow-xl transition-all group">
-                    <div class="w-12 h-12 bg-primary rounded-full flex items-center justify-center text-white shrink-0 group-hover:scale-110 transition-transform">
-                        <span class="material-icons">groups</span>
-                    </div>
-                    <div>
-                        <h3 class="font-bold text-xl mb-1">Cocok untuk keluarga & corporate</h3>
-                        <p class="text-slate-500 dark:text-slate-400 text-sm">Menangani group kecil (keluarga) hingga rombongan kantor besar.</p>
-                    </div>
-                </div>
-                <div class="flex items-start gap-4 p-6 bg-slate-50 dark:bg-slate-800/50 rounded-2xl hover:shadow-xl transition-all group">
-                    <div class="w-12 h-12 bg-primary rounded-full flex items-center justify-center text-white shrink-0 group-hover:scale-110 transition-transform">
-                        <span class="material-icons">chat</span>
-                    </div>
-                    <div>
-                        <h3 class="font-bold text-xl mb-1">Respon cepat via WhatsApp</h3>
-                        <p class="text-slate-500 dark:text-slate-400 text-sm">Tim CS aktif 24/7 untuk menjawab pertanyaan dan kebutuhan trip Anda.</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="h-[600px] rounded-2xl overflow-hidden shadow-2xl reveal reveal-left bg-slate-200 dark:bg-slate-800">
-            <img alt="Tim Bandung Explore" class="w-full h-full object-cover" src="assets/images/tim-bandung-explore.jpeg"/>
-        </div>
-    </div>
-</section>
-
-<!-- Itinerary & Logistics Section -->
-<section id="details" class="py-24 px-6 bg-slate-900 text-white">
+<!-- Why Choose Us Section (Premium Icon Grid) -->
+<section id="why-us" class="py-24 px-6 bg-slate-50 dark:bg-slate-900/50">
     <div class="max-w-7xl mx-auto">
-        <div class="grid lg:grid-cols-2 gap-16">
+        <div class="text-center max-w-3xl mx-auto mb-20 reveal reveal-up">
+            <span class="text-primary font-bold tracking-[0.3em] uppercase text-xs mb-4 block">Our Excellence</span>
+            <h2 class="jakarta text-5xl md:text-6xl font-extrabold mb-6">Kenapa Percayakan Liburan <br/> <span class="text-primary">Bersama Kami?</span></h2>
+            <p class="text-lg text-slate-500 dark:text-slate-400">Kami memberikan standar pelayanan tinggi untuk setiap perjalanan Anda, memastikan setiap detik liburan di Bandung terasa istimewa.</p>
+        </div>
+
+        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <!-- Feature 1 -->
+            <div class="bg-white dark:bg-slate-800 p-10 rounded-3xl shadow-sm border border-slate-100 dark:border-slate-700 hover:shadow-2xl hover:border-primary/30 transition-all group reveal reveal-up">
+                <div class="w-16 h-16 bg-primary/10 rounded-2xl flex items-center justify-center text-primary mb-8 group-hover:scale-110 group-hover:bg-primary group-hover:text-white transition-all duration-500">
+                    <span class="material-icons text-3xl">directions_car</span>
+                </div>
+                <h3 class="jakarta text-2xl font-bold mb-4">Armada Premium</h3>
+                <p class="text-slate-500 dark:text-slate-400 leading-relaxed">Kendaraan keluaran terbaru yang selalu dalam kondisi prima, bersih, dan wangi untuk kenyamanan perjalanan Anda.</p>
+            </div>
+
+            <!-- Feature 2 -->
+            <div class="bg-white dark:bg-slate-800 p-10 rounded-3xl shadow-sm border border-slate-100 dark:border-slate-700 hover:shadow-2xl hover:border-primary/30 transition-all group reveal reveal-up" style="--delay: 0.1s">
+                <div class="w-16 h-16 bg-primary/10 rounded-2xl flex items-center justify-center text-primary mb-8 group-hover:scale-110 group-hover:bg-primary group-hover:text-white transition-all duration-500">
+                    <span class="material-icons text-3xl">verified_user</span>
+                </div>
+                <h3 class="jakarta text-2xl font-bold mb-4">Driver Profesional</h3>
+                <p class="text-slate-500 dark:text-slate-400 leading-relaxed">Tim driver ramah dan berpengalaman yang menguasai rute serta paham etika pelayanan pariwisata standar tinggi.</p>
+            </div>
+
+            <!-- Feature 3 -->
+            <div class="bg-white dark:bg-slate-800 p-10 rounded-3xl shadow-sm border border-slate-100 dark:border-slate-700 hover:shadow-2xl hover:border-primary/30 transition-all group reveal reveal-up" style="--delay: 0.2s">
+                <div class="w-16 h-16 bg-primary/10 rounded-2xl flex items-center justify-center text-primary mb-8 group-hover:scale-110 group-hover:bg-primary group-hover:text-white transition-all duration-500">
+                    <span class="material-icons text-3xl">payments</span>
+                </div>
+                <h3 class="jakarta text-2xl font-bold mb-4">Harga Transparan</h3>
+                <p class="text-slate-500 dark:text-slate-400 leading-relaxed">Sistem harga yang jelas dan transparan sejak awal tanpa ada biaya tambahan tersembunyi selama perjalanan berlangsung.</p>
+            </div>
+
+            <!-- Feature 4 -->
+            <div class="bg-white dark:bg-slate-800 p-10 rounded-3xl shadow-sm border border-slate-100 dark:border-slate-700 hover:shadow-2xl hover:border-primary/30 transition-all group reveal reveal-up" style="--delay: 0.3s">
+                <div class="w-16 h-16 bg-primary/10 rounded-2xl flex items-center justify-center text-primary mb-8 group-hover:scale-110 group-hover:bg-primary group-hover:text-white transition-all duration-500">
+                    <span class="material-icons text-3xl">confirmation_number</span>
+                </div>
+                <h3 class="jakarta text-2xl font-bold mb-4">Booking Mudah</h3>
+                <p class="text-slate-500 dark:text-slate-400 leading-relaxed">Proses pemesanan yang simpel dan cepat. Cukup pilih paket, konsultasi via WhatsApp, dan trip Anda siap dijalankan.</p>
+            </div>
+
+            <!-- Feature 5 -->
+            <div class="bg-white dark:bg-slate-800 p-10 rounded-3xl shadow-sm border border-slate-100 dark:border-slate-700 hover:shadow-2xl hover:border-primary/30 transition-all group reveal reveal-up" style="--delay: 0.4s">
+                <div class="w-16 h-16 bg-primary/10 rounded-2xl flex items-center justify-center text-primary mb-8 group-hover:scale-110 group-hover:bg-primary group-hover:text-white transition-all duration-500">
+                    <span class="material-icons text-3xl">auto_awesome</span>
+                </div>
+                <h3 class="jakarta text-2xl font-bold mb-4">Trip Custom</h3>
+                <p class="text-slate-500 dark:text-slate-400 leading-relaxed">Fleksibilitas penuh untuk menentukan destinasi sesuai keinginan. Kami bantu merancang itinerary yang paling efisien.</p>
+            </div>
+
+            <!-- Feature 6 -->
+            <div class="bg-white dark:bg-slate-800 p-10 rounded-3xl shadow-sm border border-slate-100 dark:border-slate-700 hover:shadow-2xl hover:border-primary/30 transition-all group reveal reveal-up" style="--delay: 0.5s">
+                <div class="w-16 h-16 bg-primary/10 rounded-2xl flex items-center justify-center text-primary mb-8 group-hover:scale-110 group-hover:bg-primary group-hover:text-white transition-all duration-500">
+                    <span class="material-icons text-3xl">support_agent</span>
+                </div>
+                <h3 class="jakarta text-2xl font-bold mb-4">Layanan 24/7</h3>
+                <p class="text-slate-500 dark:text-slate-400 leading-relaxed">Tim customer service kami siap membantu dan memberikan respon cepat kapan pun Anda membutuhkan bantuan.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Itinerary & Logistics Section (Theme-Aware Premium Layout) -->
+<section id="details" class="py-24 px-6 bg-slate-50 dark:bg-slate-900 text-slate-900 dark:text-white relative overflow-hidden transition-colors duration-300">
+    <!-- Subtle Gradient Background (Only visible in dark mode or subtle in light) -->
+    <div class="absolute top-0 right-0 w-[500px] h-[500px] bg-primary/5 dark:bg-primary/20 blur-[120px] rounded-full -mr-64 -mt-64"></div>
+    <div class="absolute bottom-0 left-0 w-[500px] h-[500px] bg-primary/5 dark:bg-primary/10 blur-[120px] rounded-full -ml-64 -mb-64"></div>
+
+    <div class="max-w-7xl mx-auto relative z-10">
+        <div class="grid lg:grid-cols-2 gap-20 items-start">
             <!-- Itinerary -->
             <div class="reveal reveal-right">
                 <span class="text-primary font-bold tracking-[0.3em] uppercase text-xs mb-4 block">The Journey</span>
-                <h2 class="bebas text-5xl md:text-7xl mb-12">Itinerary Singkat <br/> <span class="text-primary/70 text-3xl md:text-5xl">Contoh Paket 2D1N</span></h2>
-                <div class="space-y-12 relative before:content-[''] before:absolute before:left-[1.65rem] before:top-4 before:bottom-4 before:w-[2px] before:bg-primary/20">
-                    <div class="relative pl-16">
-                        <div class="absolute left-0 top-0 w-14 h-14 bg-primary rounded-2xl flex items-center justify-center z-10 shadow-[0_0_20px_rgba(52,152,219,0.3)]">
-                            <span class="material-icons">looks_one</span>
+                <h2 class="jakarta text-5xl md:text-6xl font-extrabold mb-12">Rencana Perjalanan <br/> <span class="text-primary/70 italic text-2xl md:text-3xl font-normal">Contoh Paket 2D1N</span></h2>
+                
+                <div class="space-y-12 relative before:content-[''] before:absolute before:left-[1.65rem] before:top-4 before:bottom-4 before:w-[2px] before:bg-slate-200 dark:before:bg-white/10">
+                    <!-- Day 1 -->
+                    <div class="relative pl-16 group">
+                        <div class="absolute left-0 top-0 w-14 h-14 bg-white dark:bg-slate-800 text-slate-900 dark:text-white rounded-2xl flex flex-col items-center justify-center z-10 border border-slate-100 dark:border-white/20 shadow-xl group-hover:bg-primary group-hover:text-white transition-all duration-500">
+                            <span class="text-[10px] uppercase font-bold leading-none mb-1">Day</span>
+                            <span class="jakarta text-xl font-extrabold leading-none">01</span>
                         </div>
-                        <h3 class="bebas text-3xl mb-4">Hari 1: Jelajah Lembang</h3>
-                        <ul class="space-y-3 text-slate-400">
-                            <li class="flex items-center gap-3"><span class="w-1.5 h-1.5 bg-primary rounded-full"></span> Penjemputan di Stasiun/Bandara/Hotel</li>
-                            <li class="flex items-center gap-3"><span class="w-1.5 h-1.5 bg-primary rounded-full"></span> Explore Floating Market</li>
-                            <li class="flex items-center gap-3"><span class="w-1.5 h-1.5 bg-primary rounded-full"></span> Farmhouse Susu Lembang</li>
-                            <li class="flex items-center gap-3"><span class="w-1.5 h-1.5 bg-primary rounded-full"></span> Check-in Hotel & Makan Malam</li>
+                        <h3 class="jakarta text-2xl font-bold mb-4 text-slate-900 dark:text-white">Jelajah Utara (Lembang)</h3>
+                        <ul class="space-y-4">
+                            <li class="flex items-start gap-3 text-slate-600 dark:text-slate-400">
+                                <span class="w-1.5 h-1.5 bg-primary rounded-full mt-2 shrink-0"></span>
+                                <p>Penjemputan eksklusif di Stasiun/Bandara/Hotel Bandung (Pagi Hari)</p>
+                            </li>
+                            <li class="flex items-start gap-3 text-slate-600 dark:text-slate-400">
+                                <span class="w-1.5 h-1.5 bg-primary rounded-full mt-2 shrink-0"></span>
+                                <p>Eksplorasi Floating Market & Farmhouse (Spot Foto Ikonik)</p>
+                            </li>
+                            <li class="flex items-start gap-3 text-slate-600 dark:text-slate-400">
+                                <span class="w-1.5 h-1.5 bg-primary rounded-full mt-2 shrink-0"></span>
+                                <p>Makan siang di Resto lokal dengan view perbukitan</p>
+                            </li>
+                            <li class="flex items-start gap-3 text-slate-600 dark:text-slate-400">
+                                <span class="w-1.5 h-1.5 bg-primary rounded-full mt-2 shrink-0"></span>
+                                <p>Check-in Hotel pilihan & Istirahat atau Free time di kota</p>
+                            </li>
                         </ul>
                     </div>
-                    <div class="relative pl-16">
-                        <div class="absolute left-0 top-0 w-14 h-14 bg-primary rounded-2xl flex items-center justify-center z-10 shadow-[0_0_20px_rgba(52,152,219,0.3)]">
-                            <span class="material-icons">looks_two</span>
+
+                    <!-- Day 2 -->
+                    <div class="relative pl-16 group">
+                        <div class="absolute left-0 top-0 w-14 h-14 bg-white dark:bg-slate-800 text-slate-900 dark:text-white rounded-2xl flex flex-col items-center justify-center z-10 border border-slate-100 dark:border-white/20 shadow-xl group-hover:bg-primary group-hover:text-white transition-all duration-500">
+                            <span class="text-[10px] uppercase font-bold leading-none mb-1">Day</span>
+                            <span class="jakarta text-xl font-extrabold leading-none">02</span>
                         </div>
-                        <h3 class="bebas text-3xl mb-4">Hari 2: Ciwidey & Heritage</h3>
-                        <ul class="space-y-3 text-slate-400">
-                            <li class="flex items-center gap-3"><span class="w-1.5 h-1.5 bg-primary rounded-full"></span> Kawah Putih Ciwidey</li>
-                            <li class="flex items-center gap-3"><span class="w-1.5 h-1.5 bg-primary rounded-full"></span> Glamping Lakeside Rancabali</li>
-                            <li class="flex items-center gap-3"><span class="w-1.5 h-1.5 bg-primary rounded-full"></span> Belanja Oleh-oleh Bandung</li>
-                            <li class="flex items-center gap-3"><span class="w-1.5 h-1.5 bg-primary rounded-full"></span> Drop Off Stasiun/Bandara</li>
+                        <h3 class="jakarta text-2xl font-bold mb-4 text-slate-900 dark:text-white">Pesona Selatan (Ciwidey)</h3>
+                        <ul class="space-y-4">
+                            <li class="flex items-start gap-3 text-slate-600 dark:text-slate-400">
+                                <span class="w-1.5 h-1.5 bg-primary rounded-full mt-2 shrink-0"></span>
+                                <p>Sarapan di Hotel & Menuju kawasan wisata Ciwidey</p>
+                            </li>
+                            <li class="flex items-start gap-3 text-slate-600 dark:text-slate-400">
+                                <span class="w-1.5 h-1.5 bg-primary rounded-full mt-2 shrink-0"></span>
+                                <p>Mengunjungi Kawah Putih & Glamping Lakeside (Situ Patenggang)</p>
+                            </li>
+                            <li class="flex items-start gap-3 text-slate-600 dark:text-slate-400">
+                                <span class="w-1.5 h-1.5 bg-primary rounded-full mt-2 shrink-0"></span>
+                                <p>Wisata belanja oleh-oleh khas Bandung & Souvenir</p>
+                            </li>
+                            <li class="flex items-start gap-3 text-slate-600 dark:text-slate-400">
+                                <span class="w-1.5 h-1.5 bg-primary rounded-full mt-2 shrink-0"></span>
+                                <p>Pengantaran kembali ke titik poin kepulangan (Bandung Area)</p>
+                            </li>
                         </ul>
                     </div>
                 </div>
             </div>
 
-            <!-- Include/Exclude -->
+            <!-- Include & Exclude -->
             <div class="reveal reveal-left" style="--delay: 0.2s">
-                <span class="text-primary font-bold tracking-[0.3em] uppercase text-xs mb-4 block">Amenities</span>
-                <h2 class="bebas text-5xl md:text-7xl mb-12">Include & Exclude</h2>
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-                    <div class="bg-slate-800/50 p-8 rounded-3xl border border-slate-700">
-                        <div class="flex items-center gap-3 text-primary mb-6">
-                            <span class="material-icons">check_circle</span>
-                            <span class="font-bold uppercase tracking-widest text-sm">Include</span>
+                <span class="text-primary font-bold tracking-[0.3em] uppercase text-xs mb-4 block">Service Details</span>
+                <h2 class="jakarta text-5xl md:text-6xl font-extrabold mb-12">Fasilitas <span class="text-slate-300 dark:text-white/30">&</span> Layanan</h2>
+                
+                <div class="space-y-8">
+                    <!-- Include Card -->
+                    <div class="bg-white dark:bg-white/5 backdrop-blur-sm p-10 rounded-[2rem] border border-slate-100 dark:border-white/10 hover:border-primary/50 shadow-sm hover:shadow-2xl transition-all duration-500">
+                        <div class="flex items-center gap-4 text-primary mb-8">
+                            <div class="w-10 h-10 bg-primary/10 rounded-xl flex items-center justify-center">
+                                <span class="material-icons text-xl">check_circle</span>
+                            </div>
+                            <span class="jakarta font-extrabold uppercase tracking-[0.2em] text-sm text-slate-900 dark:text-white">Yang Anda Dapatkan</span>
                         </div>
-                        <ul class="space-y-4 text-slate-300">
-                            <li class="flex gap-3"><span class="material-icons text-secondary text-base">done</span> Transport AC Prima</li>
-                            <li class="flex gap-3"><span class="material-icons text-secondary text-base">done</span> Driver Profesional & BBM</li>
-                            <li class="flex gap-3"><span class="material-icons text-secondary text-base">done</span> Tiket Masuk Objek Wisata</li>
-                            <li class="flex gap-3"><span class="material-icons text-secondary text-base">done</span> Dokumentasi Perjalanan</li>
-                            <li class="flex gap-3"><span class="material-icons text-secondary text-base">done</span> Air Mineral</li>
+                        <ul class="grid grid-cols-1 md:grid-cols-2 gap-y-4 gap-x-8">
+                            <li class="flex items-center gap-3 text-slate-600 dark:text-slate-300">
+                                <span class="material-icons text-primary text-sm">task_alt</span>
+                                <span class="text-sm font-semibold">Transport AC Prima</span>
+                            </li>
+                            <li class="flex items-center gap-3 text-slate-600 dark:text-slate-300">
+                                <span class="material-icons text-primary text-sm">task_alt</span>
+                                <span class="text-sm font-semibold">Driver & BBM</span>
+                            </li>
+                            <li class="flex items-center gap-3 text-slate-600 dark:text-slate-300">
+                                <span class="material-icons text-primary text-sm">task_alt</span>
+                                <span class="text-sm font-semibold">Tiket Wisata</span>
+                            </li>
+                            <li class="flex items-center gap-3 text-slate-600 dark:text-slate-300">
+                                <span class="material-icons text-primary text-sm">task_alt</span>
+                                <span class="text-sm font-semibold">Dokumentasi</span>
+                            </li>
+                            <li class="flex items-center gap-3 text-slate-600 dark:text-slate-300">
+                                <span class="material-icons text-primary text-sm">task_alt</span>
+                                <span class="text-sm font-semibold">Air Mineral</span>
+                            </li>
                         </ul>
                     </div>
-                    <div class="bg-slate-800/50 p-8 rounded-3xl border border-slate-700">
-                        <div class="flex items-center gap-3 text-red-400 mb-6">
-                            <span class="material-icons">cancel</span>
-                            <span class="font-bold uppercase tracking-widest text-sm">Exclude</span>
+
+                    <!-- Exclude Card -->
+                    <div class="bg-white dark:bg-white/5 backdrop-blur-sm p-10 rounded-[2rem] border border-slate-100 dark:border-white/10 hover:border-red-400/50 shadow-sm hover:shadow-2xl transition-all duration-500">
+                        <div class="flex items-center gap-4 text-red-400 mb-8">
+                            <div class="w-10 h-10 bg-red-400/10 rounded-xl flex items-center justify-center">
+                                <span class="material-icons text-xl">cancel</span>
+                            </div>
+                            <span class="jakarta font-extrabold uppercase tracking-[0.2em] text-sm text-slate-900 dark:text-white">Tidak Termasuk</span>
                         </div>
-                        <ul class="space-y-4 text-slate-300">
-                            <li class="flex gap-3"><span class="material-icons text-red-400 text-base">close</span> Pengeluaran Pribadi</li>
-                            <li class="flex gap-3"><span class="material-icons text-red-400 text-base">close</span> Makan diluar Program</li>
-                            <li class="flex gap-3"><span class="material-icons text-red-400 text-base">close</span> Tiket Pesawat/Kereta ke Bandung</li>
-                            <li class="flex gap-3"><span class="material-icons text-red-400 text-base">close</span> Keperluan Tambahan</li>
+                        <ul class="grid grid-cols-1 md:grid-cols-2 gap-y-4 gap-x-8">
+                            <li class="flex items-center gap-3 text-slate-500 italic">
+                                <span class="material-icons text-red-400/50 text-sm">remove_circle_outline</span>
+                                <span class="text-xs">Pengeluaran Pribadi</span>
+                            </li>
+                            <li class="flex items-center gap-3 text-slate-500 italic">
+                                <span class="material-icons text-red-400/50 text-sm">remove_circle_outline</span>
+                                <span class="text-xs">Makan di luar Program</span>
+                            </li>
+                            <li class="flex items-center gap-3 text-slate-500 italic">
+                                <span class="material-icons text-red-400/50 text-sm">remove_circle_outline</span>
+                                <span class="text-xs">Tiket Transport ke BDG</span>
+                            </li>
                         </ul>
                     </div>
                 </div>
@@ -535,7 +593,7 @@ Pilih paketnya, kami urus semuanya.</p>
                     <div class="relative">
                         <svg class="absolute -top-8 -left-6 w-16 h-16 text-primary/10 fill-current" viewBox="0 0 24 24"><path d="M14.017 21L14.017 18C14.017 16.8954 14.9124 16 16.017 16H19.017C19.5693 16 20.017 15.5523 20.017 15V9C20.017 8.44772 19.5693 8 19.017 8H16.017C14.9124 8 14.017 7.10457 14.017 6V5C14.017 3.34315 15.3602 2 17.017 2H20.017C21.6739 2 23.017 3.34315 23.017 5V15C23.017 18.3137 20.3307 21 17.017 21H14.017ZM1 21L1 18C1 16.8954 1.89543 16 3 16H6C6.55228 16 7 15.5523 7 15V9C7 8.44772 6.55228 8 6 8H3C1.89543 8 1 7.10457 1 6V5C1 3.34315 2.34315 2 4 2H7C8.65685 2 10 3.34315 10 5V15C10 18.3137 7.31371 21 4 21H1ZM3 4C2.44772 4 2 4.44772 2 5V6C2 6.55228 2.44772 7 3 7H6C7.10457 7 8 7.89543 8 9V15C8 17.2091 6.20914 19 4 19H3C2.44772 19 2 18.5523 2 18V18C2 17.4477 2.44772 17 3 17H6C6.55228 17 7 16.5523 7 16V15H3C2.44772 15 2 14.5523 2 14V9C2 7.34315 3.34315 6 5 6H7V5C7 4.44772 6.55228 4 6 4H3ZM16.017 4C15.4647 4 15.017 4.44772 15.017 5V6C15.017 6.55228 15.4647 7 16.017 7H19.017C20.1216 7 21.017 7.89543 21.017 9V15C21.017 17.2091 19.2261 19 17.017 19H16.017C15.4647 19 15.017 18.5523 15.017 18V18C15.017 17.4477 15.4647 17 16.017 17H19.017C19.5693 17 20.017 16.5523 20.017 16V15H16.017C15.4647 15 15.017 14.5523 15.017 14V9C15.017 7.34315 16.3602 6 18.017 6H20.017V5C20.017 4.44772 19.5693 4 19.017 4H16.017Z"></path></svg>
                         <p class="text-xl md:text-2xl text-slate-600 dark:text-slate-400 italic mb-6 leading-relaxed relative z-10">
-                            "Websitenya jelas, booking gampang, respon admin cepat banget di WA. Udah 2x pake jasa Vacasky buat tamu kantor, selalu puas!"
+                            "Websitenya jelas, booking gampang, respon admin cepat banget di WA. Udah 2x pake jasa Bandung Explore buat tamu kantor, selalu puas!"
                         </p>
                         <div class="flex items-center gap-4">
                             <div class="w-12 h-12 rounded-full overflow-hidden bg-primary/20 flex items-center justify-center">
@@ -573,9 +631,9 @@ Pilih paketnya, kami urus semuanya.</p>
     <div class="max-w-7xl mx-auto px-6">
         <div class="grid grid-cols-1 md:grid-cols-4 gap-12 mb-16">
             <div class="col-span-1 md:col-span-1">
-                <div class="flex items-center gap-2 mb-8">
-                    <span class="material-icons text-primary text-3xl">cloud</span>
-                    <span class="bebas text-2xl tracking-wider">VACASKY</span>
+                <div class="flex items-center gap-3 mb-8">
+                    <img src="assets/images/logo.png" alt="Bandung Explore Logo" class="w-8 h-8 object-contain">
+                    <span class="jakarta text-xl font-extrabold tracking-tight text-white">Bandung <span class="text-primary">Explore</span></span>
                 </div>
                 <p class="text-slate-400 leading-relaxed mb-8">
                     The ultimate choice for travelers seeking premium experiences and authentic adventures across the globe.
@@ -622,7 +680,7 @@ Pilih paketnya, kami urus semuanya.</p>
             </div>
         </div>
         <div class="pt-8 border-t border-slate-800 text-center text-slate-500 text-sm">
-            <p>© 2024 Vacasky Travel Agency. Made with ❤️ for explorers.</p>
+            <p>© 2026 Bandung Explore Travel Agency. Made with ❤️ for explorers.</p>
         </div>
     </div>
 </footer>
